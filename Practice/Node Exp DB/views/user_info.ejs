@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+
+    <div class="max-w-6xl mx-auto">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center bg-white">
+                <h2 class="text-xl font-bold text-gray-800">Registered Users</h2>
+                <div class="flex space-x-2">
+                    <input type="text" placeholder="Search users..." class="px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500">
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm hover:bg-indigo-700 transition">Add User</button>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-gray-50 uppercase text-xs font-semibold text-gray-600">
+                        <tr>
+                            <th class="px-6 py-4">User</th>
+                            <th class="px-6 py-4">Contact & Demographics</th>
+                            <th class="px-6 py-4">Address</th>
+                            <th class="px-6 py-4">Biography</th>
+                            <th class="px-6 py-4 text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <div class="h-10 w-10 flex-shrink-0 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-700 font-bold">
+                                        AR
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Alex Rivera</div>
+                                        <div class="text-sm text-gray-500">Male • 1992-05-12</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-600">
+                                <div>alex.rivera@example.com</div>
+                                <div class="text-gray-400">+1 555-010-99</div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-600">
+                                <div>123 Pine St, Seattle</div>
+                                <div class="text-xs text-gray-400">WA, 98101</div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-500 italic max-w-xs truncate">
+                                Creative designer with a passion for UI...
+                            </td>
+                            <td class="px-6 py-4 text-right text-sm font-medium">
+                                <button class="text-indigo-600 hover:text-indigo-900 mr-3">Edit</button>
+                                <button class="text-red-600 hover:text-red-900">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <div class="h-10 w-10 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold">
+                                        SC
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Sarah Chen</div>
+                                        <div class="text-sm text-gray-500">Female • 1988-11-30</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-600">
+                                <div>s.chen@techcorp.org</div>
+                                <div class="text-gray-400">+1 555-012-44</div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-600">
+                                <div>456 Oak Ave, Austin</div>
+                                <div class="text-xs text-gray-400">TX, 73301</div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-500 italic max-w-xs truncate">
+                                Full-stack developer and coffee enthusiast.
+                            </td>
+                            <td class="px-6 py-4 text-right text-sm font-medium">
+                                <button class="text-indigo-600 hover:text-indigo-900 mr-3">Edit</button>
+                                <button class="text-red-600 hover:text-red-900">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="px-6 py-4 bg-gray-50 border-t border-gray-200 flex items-center justify-between text-xs text-gray-500 uppercase font-semibold">
+                <span>Showing 2 users</span>
+                <div class="flex space-x-1">
+                    <button class="px-2 py-1 border border-gray-300 rounded bg-white hover:bg-gray-100">Prev</button>
+                    <button class="px-2 py-1 border border-gray-300 rounded bg-white hover:bg-gray-100">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
