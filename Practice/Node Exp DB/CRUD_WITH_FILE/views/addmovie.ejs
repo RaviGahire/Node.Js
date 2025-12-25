@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Advanced Movie Entry</title>
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
+
 <body class="bg-slate-100 flex items-center justify-center min-h-screen p-4 md:p-10">
 
-  <form  action="/savemovie" method="POST"  enctype="multipart/form-data"  id="movieEntryForm" name="movieEntryForm"
-    class="bg-white p-8 rounded-3xl shadow-2xl w-full max-w-2xl space-y-6 border border-slate-200">
-    
-    <header class="border-b border-slate-100 pb-1">
-      <h2 class="text-3xl font-black text-slate-900 tracking-tight">Movie Details</h2>
-      <p class="text-slate-500">Fill in the comprehensive details for the film database.</p>
+  <form action="/savemovie" method="POST" enctype="multipart/form-data" id="movieEntryForm" name="movieEntryForm"
+    class="bg-white p-8 rounded-3xl shadow-2xl w-full max-w-4xl space-y-6 border border-slate-200">
+
+    <header class="border-b border-slate-100 pb-1 flex justify-between items-center">
+      <div>
+        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Add Movie Details</h2>
+        <p class="text-slate-500">Fill in the comprehensive details for the film database.</p>
+      </div>
+      <div>
+        <a href="/moviedata"
+          class="bg-cyan-800 px-4 py-2.5 rounded-md text-white font-bold tracking-wide shadow-2xl hover:bg-cyan-600 transition ">Check
+          Movies</a>
+
+      </div>
     </header>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
+
       <div class="md:col-span-2">
         <label for="movieTitle" class="block text-sm font-bold text-slate-700 mb-1">Movie Title</label>
         <input type="text" id="movieTitle" name="movieTitle" placeholder="The Dark Knight" required
@@ -32,7 +42,8 @@
 
       <div>
         <label for="genre" class="block text-sm font-bold text-slate-700 mb-1">Genre</label>
-        <select id="genre" name="genre" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-rose-500 focus:outline-none bg-white">
+        <select id="genre" name="genre"
+          class="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-rose-500 focus:outline-none bg-white">
           <option value="action">Action</option>
           <option value="comedy">Comedy</option>
           <option value="drama">Drama</option>
@@ -49,7 +60,8 @@
 
       <div>
         <label for="boxOfficeStatus" class="block text-sm font-bold text-slate-700 mb-1">Performance</label>
-        <select id="boxOfficeStatus" name="boxOfficeStatus" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-rose-500 focus:outline-none bg-white">
+        <select id="boxOfficeStatus" name="boxOfficeStatus"
+          class="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-rose-500 focus:outline-none bg-white">
           <option value="theaters">In Theaters</option>
           <option value="blockbuster">Blockbuster</option>
           <option value="average">Average</option>
@@ -65,8 +77,13 @@
 
       <div>
         <label for="rating" class="block text-sm font-bold text-slate-700 mb-1">Rating (1-10)</label>
-        <input type="range" id="rating" name="rating" min="1" max="10" step="0.1" 
-          class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-rose-500 mt-4">
+        <div>
+          <div class="inline-flex gap-8.5 font-bold text-gray-600" >
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+          </div>
+          <input type="range" id="rating" name="rating" min="1" max="10" step="0.1"
+            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-rose-500 mt-3">
+        </div>
       </div>
     </div>
 
@@ -78,8 +95,9 @@
 
     <div>
       <label class="block text-sm font-bold text-slate-700 mb-1">Movie Poster</label>
-      <div class="group relative border-2 border-dashed border-slate-300 rounded-2xl p-6 transition hover:bg-slate-50 hover:border-rose-400 text-center">
-        <input type="file" id="posterUpload" name="posterUpload" accept="image/*" 
+      <div
+        class="group relative border-2 border-dashed border-slate-300 rounded-2xl p-6 transition hover:bg-slate-50 hover:border-rose-400 text-center">
+        <input type="file" id="posterUpload" name="posterUpload" accept="image/*"
           class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
         <div class="space-y-2">
           <span class="text-rose-500 font-medium">Click to upload poster</span>
@@ -89,16 +107,17 @@
     </div>
 
     <div class="flex gap-4 pt-4">
-      <button type="reset" 
-        class="flex-1 px-6 py-3 border border-slate-200 text-slate-600 rounded-xl font-bold hover:bg-slate-50 transition">
+      <button type="reset"
+        class="flex-1 cursor-pointer px-6 py-3 border border-slate-200 text-slate-600 rounded-xl font-bold hover:bg-slate-50 transition">
         Discard
       </button>
-      <button type="submit"  
-        class="flex-[2] bg-rose-500 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-rose-200 hover:bg-rose-600 transition active:scale-[0.98]">
+      <button type="submit"
+        class="flex-[2] cursor-pointer bg-rose-500 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-rose-200 hover:bg-rose-600 transition active:scale-[0.98]">
         Publish Movie
       </button>
     </div>
   </form>
 
 </body>
+
 </html>

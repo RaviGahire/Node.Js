@@ -58,8 +58,9 @@ app.get('/edit/:id', Editmoviedata)
 
 // controller
 const { Updatemovie } = require('./controller/Update')
+
 //update in database edited moviedata
-app.post('/editmovie/:id', Updatemovie)
+app.post('/updatemovie/:id', upload.single('posterUpload'), Updatemovie)
 
 
 // controller 
