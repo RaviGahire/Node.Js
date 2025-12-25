@@ -8,10 +8,10 @@
 </head>
 <body class="bg-slate-100 flex items-center justify-center min-h-screen p-4 md:p-10">
 
-  <form id="movieEntryForm" name="movieEntryForm" action="#" method="POST" enctype="multipart/form-data" 
+  <form  action="/savemovie" method="POST"  id="movieEntryForm" name="movieEntryForm"
     class="bg-white p-8 rounded-3xl shadow-2xl w-full max-w-2xl space-y-6 border border-slate-200">
     
-    <header class="border-b border-slate-100 pb-4">
+    <header class="border-b border-slate-100 pb-1">
       <h2 class="text-3xl font-black text-slate-900 tracking-tight">Movie Details</h2>
       <p class="text-slate-500">Fill in the comprehensive details for the film database.</p>
     </header>
@@ -89,11 +89,11 @@
     </div>
 
     <div class="flex gap-4 pt-4">
-      <button type="reset" id="resetForm" name="resetForm" 
+      <button type="reset" 
         class="flex-1 px-6 py-3 border border-slate-200 text-slate-600 rounded-xl font-bold hover:bg-slate-50 transition">
         Discard
       </button>
-      <button type="submit" id="submitForm" name="submitForm" 
+      <button type="submit"  
         class="flex-[2] bg-rose-500 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-rose-200 hover:bg-rose-600 transition active:scale-[0.98]">
         Publish Movie
       </button>
