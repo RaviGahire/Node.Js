@@ -10,8 +10,17 @@
 
   <div class="max-w-6xl mx-auto">
     <div class="flex justify-between items-center mb-6">
-      <h2 class="text-2xl font-bold text-gray-800">Movie Database</h2>
-      <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">4 Movies Found</span>
+     
+      <div class="flex flex-col gap-2">
+         <h2 class="text-2xl font-bold text-gray-800">Movie Database</h2>
+              <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium"><span class="text-red-700 font-bold"><%- data.length %></span> Movies Found</span>
+
+      </div>
+ <div>
+       <a href="/"
+       class="px-4 py-2 bg-green-800 text-white rounded-md"
+       >Add Movie</a>
+ </div>
     </div>
 
     <div class="overflow-hidden bg-white shadow-sm border border-gray-200 rounded-xl">
@@ -29,57 +38,44 @@
         </thead>
         <tbody class="divide-y divide-gray-100">
           
-          <tr class="hover:bg-gray-50 transition">
+      
+
+          <% data.map((val,indx)=>{ %>
+    <tr class="hover:bg-gray-50 transition">
             <td class="px-6 py-4">
               <div class="w-12 h-16 bg-gray-200 rounded-md overflow-hidden flex items-center justify-center border border-gray-100">
                 <span class="text-[10px] text-gray-400 font-bold uppercase">Poster</span>
               </div>
             </td>
             <td class="px-6 py-4">
-              <div class="font-bold text-gray-900">The Dark Knight</div>
-              <div class="text-xs text-gray-500">Christopher Nolan</div>
+              <div class="font-bold text-gray-900"><%-val.movieTitle %></div>
+              <div class="text-xs text-gray-500"><%-val.director %></div>
             </td>
-            <td class="px-6 py-4 text-sm text-gray-600">July 18, 2008</td>
-            <td class="px-6 py-4 text-sm text-gray-600">Action / Sci-Fi</td>
+            <td class="px-6 py-4 text-sm text-gray-600"><%-val.releaseDate %></td>
+            <td class="px-6 py-4 text-sm text-gray-600"><%-val.genre %></td>
             <td class="px-6 py-4">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700">BLOCKBUSTER</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700"><%-val.boxOfficeStatus %></span>
             </td>
             <td class="px-6 py-4">
               <div class="flex items-center gap-1">
-                <span class="text-sm font-bold text-gray-700">9.0</span>
+                <span class="text-sm font-bold text-gray-700"><%- val.rating %></span>
                 <span class="text-yellow-400 text-xs">★</span>
               </div>
             </td>
-            <td class="px-6 py-4 text-right">
-              <button class="text-indigo-600 hover:text-indigo-900 font-medium text-sm">Edit</button>
+            <td class="px-1 py-4 text-center">
+            <div class="flex justify-end items-center gap-2">
+                <a href="/edit/<%-val._id%>" class="text-indigo-600 hover:text-indigo-900 font-medium text-sm cursor-pointer bg-gray-200 px-4 py-2 rounded-md">Edit</a>
+              <br>
+              <a href="/delete/<%-val._id%>" class="text-indigo-600 hover:text-indigo-900 font-medium text-sm cursor-pointer bg-gray-200 px-4 py-2 rounded-md">Delete</a>
+            </div>
+
             </td>
           </tr>
 
-          <tr class="hover:bg-gray-50 transition">
-            <td class="px-6 py-4">
-              <div class="w-12 h-16 bg-gray-200 rounded-md overflow-hidden flex items-center justify-center border border-gray-100">
-                <span class="text-[10px] text-gray-400 font-bold uppercase text-center">No Img</span>
-              </div>
-            </td>
-            <td class="px-6 py-4">
-              <div class="font-bold text-gray-900">Catwoman</div>
-              <div class="text-xs text-gray-500">Pitof</div>
-            </td>
-            <td class="px-6 py-4 text-sm text-gray-600">July 23, 2004</td>
-            <td class="px-6 py-4 text-sm text-gray-600">Action</td>
-            <td class="px-6 py-4">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-700">FLOP</span>
-            </td>
-            <td class="px-6 py-4">
-              <div class="flex items-center gap-1">
-                <span class="text-sm font-bold text-gray-700">3.4</span>
-                <span class="text-yellow-400 text-xs">★</span>
-              </div>
-            </td>
-            <td class="px-6 py-4 text-right text-sm">
-              <button class="text-indigo-600 hover:text-indigo-900 font-medium">Edit</button>
-            </td>
-          </tr>
+
+         <% }) %>
+
+     
 
         </tbody>
       </table>

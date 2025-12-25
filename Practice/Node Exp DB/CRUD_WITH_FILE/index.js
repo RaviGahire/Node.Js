@@ -21,32 +21,37 @@ const connectDB = require('./config/connectDB')
 
 // import movies schema
 const movieSchema = require('./model/movieSchema');
-const { default: mongoose } = require('mongoose');
 
-
+// save movie controller
+const { Savemovie } = require('./controller/Savemovie')
 // data insert operation 
-app.post('/savemovie', async (req, res) => {
-
-    try {
-        //   res.send(req.body)
-        const insert =  new movieSchema(req.body)
-       await insert.save()
-        console.log('movie saved suceessfully ')
-        res.send(`<script> 
-    
-    alert('You want to save ')
-    window.location.href = '/'
-    
-    </script>`)
+app.post('/savemovie', Savemovie)
 
 
-    } catch (error) {
-        console.log(error)
 
-    }
+// controller 
+const { Movies } = require('./controller/Movies')
+// Read data 
 
-})
+app.get('/moviedata', Movies)
 
+
+//controller 
+const { Editmoviedata } = require('./controller/Editmoviedata')
+//edit movie data 
+app.get('/edit/:id', Editmoviedata)
+
+
+// controller
+const { Updatemovie } = require('./controller/Update')
+//update in database edited moviedata
+app.post('/editmovie/:id', Updatemovie)
+
+
+// controller 
+const {Deletemovie} =  require('./controller/Deletemovie')
+// delete movie
+app.get('/delete/:id',Deletemovie )
 
 
 // Fallback
