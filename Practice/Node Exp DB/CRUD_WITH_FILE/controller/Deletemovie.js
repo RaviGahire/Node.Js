@@ -5,13 +5,11 @@ exports.Deletemovie = async (req, res) => {
     try {
         const id = req.params.id
         const deletedmovie = await movieSchema.findByIdAndDelete(id)
-        console.log(deletedmovie)
+        console.log("Movie deleted successfully")
 
         res.send(`
             <script>
-            
-         
-            window.location.href = '/moviedata'
+               window.location.href = '/moviedata'
                alret(' movie deleted successfully ')
             </script>
             `)

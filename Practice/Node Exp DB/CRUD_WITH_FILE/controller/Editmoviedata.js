@@ -5,16 +5,12 @@ exports.Editmoviedata = async (req, res) => {
 
     try {
         const id = req.params.id
-        const edit = await movieSchema.findById(id)
-
-        res.render('editmovie.ejs', { data: edit })
- res.send(`
-            <script>
-            window.location.href = '/moviedata'
-            </script>
-            `)
+        const editdata = await movieSchema.findById(id)
+        res.render('editmovie.ejs', { data: editdata })
+        console.log('Movie data updated sucessfully')
 
     } catch (error) {
+        console.log('Error from edit movie data controller ')
         console.log(error)
 
     }

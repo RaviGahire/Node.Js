@@ -6,14 +6,28 @@ const app = express();
 require('dotenv').config()
 
 // middlewares
-app.use(express.static('public/'))
-app.set('view engine', 'ejs')
-
+app.use(express.static('public/'));
 app.use(express.urlencoded({ extended: true }));
+app.set('view engine', 'ejs');
 
-// import controllers 
+
+// for file handel multer
+const multer =  require('multer')
+const storage = multer.diskStorage({
+    destination: 'public/uploads/',
+    filename:(req,file,callback)=>{
+        callback(null,Date.now() + ' ' + file.originalname)
+    }
+})
+const upload = multer({storage:storage})
+
+
+//All Routes and controllers
+
+// import Addmovie controller
 const { Addmovie } = require('./controller/Addmovie')
-//Routes 
+
+// Addmovie Route 
 app.get('/', Addmovie)
 
 // import module database connection 
@@ -25,7 +39,7 @@ const movieSchema = require('./model/movieSchema');
 // save movie controller
 const { Savemovie } = require('./controller/Savemovie')
 // data insert operation 
-app.post('/savemovie', Savemovie)
+app.post('/savemovie', upload.single('posterUpload'), Savemovie)
 
 
 
@@ -44,14 +58,18 @@ app.get('/edit/:id', Editmoviedata)
 
 // controller
 const { Updatemovie } = require('./controller/Update')
+
 //update in database edited moviedata
-app.post('/editmovie/:id', Updatemovie)
+app.post('/updatemovie/:id', upload.single('posterUpload'), Updatemovie)
 
 
 // controller 
 const {Deletemovie} =  require('./controller/Deletemovie')
 // delete movie
 app.get('/delete/:id',Deletemovie )
+
+
+
 
 
 // Fallback

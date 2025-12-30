@@ -1,4 +1,3 @@
-const { fileLoader } = require('ejs');
 const mongoose = require('mongoose');
 
 const movieSchema = mongoose.Schema({
@@ -10,7 +9,12 @@ const movieSchema = mongoose.Schema({
     "duration": Number,
     "rating": Number,
     "synopsis": String,
-    // "posterUpload":fileLoader,
+    "posterUpload":String,
+    "createdAt":{
+        type: Date,
+        default:Date.now()
+
+    }
 })
 
 // module.exports 
