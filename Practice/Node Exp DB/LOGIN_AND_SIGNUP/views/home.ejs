@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <section class="relative h-screen w-full flex items-center justify-center bg-cover bg-center" 
+             style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070');">
+        
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight">
+                Unlock Your <br class="md:hidden"> Potential
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-lg mx-auto">
+                Join us and start your journey today. Experience the best tools built just for you.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="/login" class="w-full sm:w-auto px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-full transition duration-300 shadow-lg">
+                    Log In
+                </a>
+                <a href="/signup" class="w-full sm:w-auto px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full transition duration-300 shadow-lg">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
