@@ -1,13 +1,18 @@
 const express = require("express");
+const multer = require("multer");
 const app = express();
 
 //middlewares
 app.use(express.static("public/"));
 app.use(express.urlencoded({ extended: true }));
-app.set('view engine', 'ejs')
+app.set("view engine", "ejs");
+
+const connection = require("./config/db");
+
+const cartSchema = require("./model/cartSchema");
 
 app.get("/", (req, res) => {
-  res.send("<h1>Serever Is Up........</h1>");
+  res.render("home.ejs");
 });
 
 const PORT = 3000;
