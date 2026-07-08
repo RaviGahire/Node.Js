@@ -1,0 +1,12 @@
+{
+  "name": "fs-module",
+  "version": "1.0.0",
+  "description": "Fs module intro and use",
+  "license": "ISC",
+  "author": "RG",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
