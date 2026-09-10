@@ -1,0 +1,8 @@
+Node.js is a powerful open-source runtime environment that allows developers to run JavaScript outside the browser. 
+It is built on Chrome’s V8 JavaScript engine, which makes it fast and efficient. 
+Node.js is mainly used for building scalable network applications, especially web servers and APIs.
+One of the biggest advantages of Node.js is that it uses an event-driven, non-blocking I/O model. 
+This means it can handle many requests at the same time without waiting for each task to finish before starting 
+the next one. Because of this, Node.js is ideal for real-time applications like chat apps, online games, streaming services, and collaborative tools.
+Node.js also has a large ecosystem of packages through npm, the Node Package Manager. npm makes it easy to install libraries and tools that help developers build applications faster. Since JavaScript is used on both the frontend and backend, Node.js allows full-stack development with one language.
+In short, Node.js is popular because it is fast, scalable, and easy to use for modern web development. It has become an important technology for developers around the world.

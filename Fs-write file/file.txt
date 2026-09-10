@@ -1,0 +1,5 @@
+adds new content to the end of an existing file. 
+It does not delete the old content. 
+If the file does not exist, it creates the file and then adds the content.
+
+hello
