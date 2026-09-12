@@ -1,0 +1,15 @@
+{
+  "name": "copy-cmd",
+  "version": "1.0.0",
+  "description": "A simple CLI to copy files",
+  "type": "module",
+    "bin": {
+    "copy": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
