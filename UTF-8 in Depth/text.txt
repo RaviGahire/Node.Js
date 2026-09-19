@@ -1,0 +1,2 @@
+AI works by using algorithms to find patterns in data and then use 
+those pattern's to make prediction's decisions, or generate output 
