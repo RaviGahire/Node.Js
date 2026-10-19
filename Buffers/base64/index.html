@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div
+        style="background-color: yellowgreen; width: 400px; padding: 5px; display: flex; justify-content: center; align-items: center; margin-inline:auto;">
+        <img id="smile-icon" src="" alt="smile-icon">
+    </div>
+    <div style="width: 100%; height: 100vh; border-radius: 8px; border: 1px solid green;">
+        <video id="video-base64" controls width="100%" height="100%"></video>
+    </div>
+
+
+    <script type="module">
+
+        const base64String = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACVElEQVR4AZRPS2hTQRQ98/Jvi0UUCn4L1phFEimaLowm2IK2tgluRJcuYq2gEVGz0o2Cn6WLYpvo2u9Kq1bBgAlUmia0BUUMFoy0VQNGC2LSxGa8d8jLIiDoYc6be8+cc9+MhgbIqb5OmQ7elOmB9zITWFbkmrWpYGeDHfUBcuKQjUJRCEMGkEOAsEPCrMg1a6KakelAjL2oQQ1Qgqk0DohjRIG/QvBZCJbSuMqQTw2AuXgDAj7q/21J8nKG3Bq/mfYQ8X9XiLMahGkQUFeDji/5n/hVrOitqlmrC6qgDGU1oNqt+trn+asPiN3J4OpwEj+WSvi+VMSV4QRidzN4kZirufSt2q3Rz9v1lvfU7AIiJ7zY59uCydl5TM4soNe/FZEhL1LUs6dOIdo1NOBi2A+L2Yg9XZux39dB4Q7s9mxS2oVTfjRCg5QfdXHsZRb3Hr9BMpXD22wec7mCItes8Rl7dD9n6QZaXBdSM/NY6w6jYAsg89mJ+Lv1ilyztsZ1EuzR/YAWpxsgChrFosvRhsSTUXz7mkNTcyvaNjoUm1pWo5D/hOTTGNzkYa/KyEpUE55H04C4DcJAjx3GyiKNq8LZdQB2tx+O7Xup7kO1ugLj70X092wjp1q3hOfZND2BmrI1DIGEzWrCueNeNBcnEL18EA9Hz+L+yBlELwXRUnqN83RmsxrBXpRtp0FQA8SuB0UsW3vpWjGb1SCPBF24FvHhaH+r4vWIH4cDTlgtBske9qqMPoB2sCB2jg1CruwAxIjZpGU3rFtVZpqoZo3P2MNe1PAHAAD//4oyc+8AAAAGSURBVAMAkCX1DSLeZ4QAAAAASUVORK5CYII=";
+        const img = document.getElementById("smile-icon");
+        img.src = `data:image/png;base64,${base64String}`;
+
+        try {
+            const response = await fetch('./tasks/video.txt');
+            console.log(response)
+            const videobase64String = await response.text();
+
+            const vid = document.getElementById("video-base64");
+
+            vid.src = `data:video/mp4;base64,${videobase64String}`;
+        } catch (error) {
+            console.error("Failed to load the video base64 string:", error);
+        }
+
+    </script>
+
+</body>
+
+</html>
