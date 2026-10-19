@@ -23,8 +23,8 @@ try {
         console.log("Error in file ready state..!")
     }
 
-    // Copying file to the destination folder
-    appendFile(destinationPath, sourceBuffer);
+    // Copying file to the destination folder..... limit 2Gb
+    appendFile(destinationPath, sourceBuffer); 
     console.log("File coped successfully....!");
 
 
